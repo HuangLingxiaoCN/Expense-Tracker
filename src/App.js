@@ -1,5 +1,6 @@
 import React from "react";
 
+import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseList from "./components/Expenses/ExpenseList";
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{display: "flex", justifyContent: "center"}}>Let's learn React!</h1>
+      <NewExpense />
       <ExpenseList expenses={expenses} />
     </div>
   );
