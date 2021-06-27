@@ -1,8 +1,8 @@
-import './ExpenseList.css';
+import './Expenses.css';
 import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 
-function ExpenseList(props) {
+function Expenses(props) {
   const expenses = props.expenses;
    
   return (
@@ -31,4 +31,4 @@ function ExpenseList(props) {
   )
 }
 
-export default ExpenseList;
+export default Expenses;
