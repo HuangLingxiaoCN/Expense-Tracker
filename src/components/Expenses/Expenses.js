@@ -8,11 +8,14 @@ import ExpensesFilter from "./ExpensesFilter";
 
 function Expenses(props) {
   const [filteredYear, setYear] = useState("2021");
+  const expenses = props.expenses;
 
   const onChangeYearHandler = (year) => {
     setYear(year);
-    console.log("Selected year ", year);
   };
+
+  // eslint-disable-next-line eqeqeq
+  const filteredExpenses = expenses.filter(expenseItem => expenseItem.date.getFullYear() == filteredYear);
 
   return (
     <div>
@@ -21,7 +24,7 @@ function Expenses(props) {
           selectedYear={filteredYear}
           onChangeYear={onChangeYearHandler}
         />
-        {props.expenses.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             key={expense.id}
             title={expense.title}
