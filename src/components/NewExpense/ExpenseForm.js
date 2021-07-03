@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
-  const [inputTitle, setTitle] = useState('');
-  const [inputAmount, setAmount] = useState('');
-  const [inputDate, setDate] = useState('');
+  const [inputTitle, setTitle] = useState("");
+  const [inputAmount, setAmount] = useState("");
+  const [inputDate, setDate] = useState("");
   // Using just one state
   // const [userInput, setUserInput] = useState({
   //   title: '',
@@ -60,9 +60,13 @@ const ExpenseForm = (props) => {
 
     props.onSaveExpenseData(expenseData);
     // Clear user input
-    setTitle('');
-    setAmount('');
-    setDate('');
+    setTitle("");
+    setAmount("");
+    setDate("");
+  };
+
+  const addExpenseToggler = () => {
+    props.toggleAddExpense();
   };
 
   return (
@@ -94,6 +98,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={addExpenseToggler}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
